@@ -11,14 +11,14 @@ if($conn->connect_error){
     die('Error while connecting' .$conn->connect_error);
 }
 
-$sql="Insert into tblmyguests(fname,lname) values('imran','khan');";
+$sql="DELETE FROM tblmyguests WHERE ID='2' ";
 
 if($conn->query($sql)===TRUE){
-    echo('Inserted Successfully');
+    echo('Deleted Successfully');
 
 }
 else{
-    echo('Not inserted' .$conn->error);
+    echo('Not Deleted' .$conn->error);
 }
 
 $conn->close();
