@@ -11,7 +11,7 @@ if($conn->connect_error){
     die('Error while connecting' .$conn->connect_error);
 }
 
-$sql="DELETE FROM tblmyguests WHERE ID='2' ";
+$sql="DELETE FROM tblmyguests WHERE ID='6' ";
 
 if($conn->query($sql)===TRUE){
     echo('Deleted Successfully');
