@@ -10,12 +10,8 @@ if($conn->connect_error){
     die("error occured ".$conn->connect_error);
 }
 
-$sql='create table webEngg(
-    stdid int unsigned auto_increment primary key,
-    fname varchar(255) not null,
-    lname varchar(255) not null,
-    rdate date );
-    ';
+$sql="insert into webEngg2 (fname,lname) values('imran','khan')
+    ";
     if($conn->query($sql)===TRUE){
         echo 'Table Created';
     }
