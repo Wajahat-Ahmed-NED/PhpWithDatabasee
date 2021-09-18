@@ -1,26 +1,26 @@
-<?php 
+<?php
+
 $servername='localhost';
 $username='root';
 $password='';
 $dbname='myFinals';
 
+
 $conn=new mysqli($servername,$username,$password,$dbname);
 
 if($conn->connect_error){
-    die("error occured ".$conn->connect_error);
+    die("Error found ".$conn->connect_error);
 }
 
+$sql='select * from webengg2 where stdid=3;';
 
-
-$sql2="delete from webengg2 where stdid=1;
-    ";
-
-
-    if($conn->query($sql2)===TRUE){
-        echo 'INSERTED  SUCCESSFULLY';
+$result=$conn->query($sql);
+if($result->num_rows>0){
+    while($rows=$result->fetch_assoc()){
+        echo "id : ".$rows['stdid'].'fname :'.$rows['fname'].'lname : '.$rows['lname'].'regDate : '.$rows['rdate'].'<br>';
     }
-    else{
-        echo 'Error occured'.$conn->error();
-    }
-    $conn->close();
+}
+else{
+    echo "0 result";
+}
 ?>
