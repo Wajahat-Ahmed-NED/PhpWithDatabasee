@@ -12,15 +12,14 @@ if($conn->connect_error){
     die("Error found ".$conn->connect_error);
 }
 
-$sql='select * from webengg2 where stdid=3;';
+$sql="UPDATE  webengg2  set fname='wajahat' where stdid=3;";
 
-$result=$conn->query($sql);
-if($result->num_rows>0){
-    while($rows=$result->fetch_assoc()){
-        echo "id : ".$rows['stdid'].'fname :'.$rows['fname'].'lname : '.$rows['lname'].'regDate : '.$rows['rdate'].'<br>';
-    }
+if( $conn->query($sql)===TRUE){
+    echo "Updated successfully";
 }
 else{
-    echo "0 result";
+    echo"error occured".$conn->error();
 }
+
+$conn-.close();
 ?>
